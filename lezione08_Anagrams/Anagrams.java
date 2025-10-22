@@ -1,5 +1,5 @@
 public class Anagrams {
-    private static void generateAnagrams(String w, int n) {
+    public static void generateAnagrams(String w, int n) {
         if (w.isEmpty() || n == 0) {
             return;
         }
