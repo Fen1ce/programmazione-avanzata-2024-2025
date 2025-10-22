@@ -28,3 +28,13 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+#Suggested by ChatGPT
+# IntelliJ IDEA
+.idea/
+*.iml
+/out/
+# Compilati
+*.class
+# Sistema
+Thumbs.db
