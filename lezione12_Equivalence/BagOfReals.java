@@ -46,4 +46,18 @@ public class BagOfReals {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        if  (doubleArrayValues.length == 0) {
+            return "[]";
+        } else  {
+            String str = "[";
+            for (int i = 0; i < (doubleArrayValues.length-1); i++) {
+                str += doubleArrayValues[i] + ", ";
+            }
+            str += doubleArrayValues[doubleArrayValues.length-1] + "]";
+            return str;
+        }
+    }
 }
