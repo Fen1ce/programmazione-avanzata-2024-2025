@@ -30,7 +30,7 @@ public class Application  {
                 System.out.println("Invalid command: " + args[i]);
                 continue;
             }
-            char command = args[i].charAt(i);
+            char command = args[i].charAt(0);
             switch (command) {
                 case 'i':
                     fileArray.incrementAll();
