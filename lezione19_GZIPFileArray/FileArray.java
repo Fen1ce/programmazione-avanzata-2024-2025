@@ -11,11 +11,11 @@ public class FileArray {
     public FileArray(String filePathName) {
         this.filePathName = filePathName;
     }
-    public FileArray(String filePathName, int n) throws IOException {
+    public FileArray(String filePathName, int numberOfInt) throws IOException {
         this.filePathName = filePathName;
-        int[] array = new int[n];
+        int[] array = new int[numberOfInt];
         Random rnd = new Random();
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < numberOfInt; i++) {
             array[i] = rnd.nextInt(1025);
         }
         this.write(array);
@@ -64,20 +64,20 @@ public class FileArray {
     }
 
     //Inner Methods
-    private void write(int[] array) throws IOException {
+    void write(int[] array) throws IOException {
         DataOutputStream dos = new DataOutputStream(new FileOutputStream(filePathName));
         for (int j : array) {
             dos.writeInt(j);
         }
         dos.close();
     }
-    private int[] read() throws IOException {
+    int[] read() throws IOException {
         DataInputStream dis = new DataInputStream(new FileInputStream(filePathName));
         int[] array = this.fileToArray(dis);
         dis.close();
         return array;
     }
-    private int[] fileToArray(DataInputStream dis) throws IOException {
+    int[] fileToArray(DataInputStream dis) throws IOException {
         File file = new File(filePathName);
         Path filePath = file.toPath();
         int numberOfInt = Math.toIntExact(Files.size(filePath)) / 4;
