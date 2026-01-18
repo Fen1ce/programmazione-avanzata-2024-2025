@@ -36,8 +36,10 @@ public class FileArray {
             width = 2;
         } else if (Arrays.stream(array).max().getAsInt() < 100) {
             width = 3;
-        } else {
+        } else if (Arrays.stream(array).max().getAsInt() < 1000) {
             width = 4;
+        } else {
+            width = 5;
         }
         for (int i = 0; i < array.length; i += 5) {
             System.out.printf("[%02d-%02d]", i, Math.min(i + 4, array.length - 1));
