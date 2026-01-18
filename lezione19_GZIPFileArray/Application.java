@@ -17,10 +17,18 @@ public class Application  {
 
         //2) FileArray Creation or Loading
         if (Files.exists(filePath)) {
-            fileArray = new FileArray(filePathName);
+            if (filePathName.endsWith(".gz")) {
+                fileArray = new GZIPFileArray(filePathName);
+            } else {
+                fileArray = new FileArray(filePathName);
+            }
         }  else {
             int n = 10; //number of random integers
-            fileArray = new FileArray(filePathName, n);
+            if (filePathName.endsWith(".gz")) {
+                fileArray = new GZIPFileArray(filePathName, n);
+            } else {
+                fileArray = new FileArray(filePathName, n);
+            }
         }
 
         //3) Command Interpretation
