@@ -14,6 +14,14 @@ public class SimpleLineProcessingServer {
         ps = new PrintStream(loggingOs);
     }
 
+    //Getters
+    protected String getQuitCommand() {
+        return quitCommand;
+    }
+    protected PrintStream getLoggingOs() {
+        return ps;
+    }
+
     //Methods
     public void run() throws IOException {
         ServerSocket serverSocket = new ServerSocket(port);
