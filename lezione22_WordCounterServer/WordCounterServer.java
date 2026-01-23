@@ -21,6 +21,12 @@ public class WordCounterServer extends SimpleLineProcessingServer {
             }
             bw.write("Word counter: " + process(line) + System.lineSeparator());
             bw.flush();
+            /*
+                Senza flush() il server non comunica più col client e il client, non riuscendo a leggere nulla
+                dallo stream, si ferma.
+                E' possibile continuare a scrivere, ma non porta ad alcun risultato.
+                Non è possibile chiudere nemmeno con "bye".
+            */
             requestsCounter = requestsCounter + 1;
         }
         socket.close();
