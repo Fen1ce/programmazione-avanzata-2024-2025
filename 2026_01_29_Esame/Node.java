@@ -14,7 +14,7 @@ class Node<T> {
     private T value;
     private List<Node<T>> children;
 
-    Node(T value) {
+    Node(T value) { //perché il costruttore di Node<T> ha la maiuscola?
         this.value = value;
         this.children = new ArrayList<>();
     }
