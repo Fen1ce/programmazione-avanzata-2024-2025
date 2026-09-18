@@ -1,4 +1,4 @@
-Me: 23
+### Me: 23
 - Modellare un albero binario
     > Rispondo scrivendo un'interfaccia invece del record
 - Cos'è un'interfaccia?
@@ -13,13 +13,30 @@ Me: 23
 - A che versione di Java siamo? Come avviene il rilascio delle versioni Java? Cos'è STL?
 - Cos'è hashCode()?
 
-Secondo:
+### Secondo:
 - Cos'è un generic?
 - Risolto l'albero binario:
   ```java
   public record BinaryTree<T>(T root, BinaryTree<T> left, BinaryTree<T> right) {}
   ```
 - Come implementare l'albero binario in modo meno prolisso?
-    > Crea un costruttore aggiuntivo per creare "alberi" che sono foglie, ossia in cui left e right sono null.
+    > Crea un costruttore aggiuntivo per creare "alberi" che sono foglie, ossia in cui left e right sono null. 
     > Essendo un costruttore aggiuntivo DEVE fare uso del costruttore canonico
 - Creare un metodo che permetta di restituire le foglie in ordine alfabetico?
+  ```java
+  public List<T> getLeaves(){
+    List<T> leaves = new ArrayList<>();
+    if(label == null) 
+        return new ArrayList<>();
+    }
+    if(leftSubTree == null && rightSubTree == null) {
+        leaves.add(label);
+    } else {
+        leaves.add(leftSubTree.getLeaves())
+        leaves.add(rightSubTree.getLeaves())
+    }
+    return leaves;
+  }
+  ```
+- Cos'è il collection framework? Cos'è Collection?
+- Scrivere la signature di add() di Collection
